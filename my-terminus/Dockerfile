@@ -75,8 +75,5 @@ RUN mkdir /tmp/phantomjs \
     && cd /tmp/phantomjs \
     && mv bin/phantomjs /usr/local/bin
 
-RUN curl -Ls https://convox.com/install/linux.zip > /tmp/convox.zip && \
-    unzip /tmp/convox.zip -d /usr/local/bin && rm -f /tmp/convox.zip
-
 RUN yarn global add node-sass && npm rebuild node-sass
 
