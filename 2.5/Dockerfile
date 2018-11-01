@@ -19,4 +19,4 @@ RUN add-apt-repository \
  RUN apt-get update && apt-get install -y --no-install-recommends \
        docker-ce
 
-RUN wget https://convox.com/install/linux.zip && unzip linux.zip -d /usr/local/bin
+RUN curl -L https://convox.com/cli/linux/convox -o /usr/local/bin/convox && chmod 755 /usr/local/bin/convox
