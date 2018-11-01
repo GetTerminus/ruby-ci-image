@@ -1,6 +1,6 @@
 # this file provides the base build image used for the CI server. \
 # It includes everying required to test & compile my.terminus
-FROM getterminus/ruby-ci-image:2.5-latest
+FROM getterminus/ruby-ci-image:2.5-je-latest
 
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
