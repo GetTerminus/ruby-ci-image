@@ -24,10 +24,10 @@ RUN set -ex && for key in \
     71DCFD284A79C3B38668286BC97EC7A07EDE3FC1 \
     FD3A5288F042B6850C66B31F09FE44734EB7990E \
   ; do \
-    gpg --keyserver pool.sks-keyservers.net --recv-keys "$key" || \
-    gpg --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" || \
-    gpg --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" || \
-    gpg --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ; \
+    gpg --no-tty --keyserver pool.sks-keyservers.net --recv-keys "$key" || \
+    gpg --no-tty --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys "$key" || \
+    gpg --no-tty --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "$key" || \
+    gpg --no-tty --keyserver hkp://pgp.mit.edu:80 --recv-keys "$key" ; \
   done
 
 ENV NODE_VERSION 9.11.1
