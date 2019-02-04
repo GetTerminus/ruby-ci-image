@@ -1,4 +1,4 @@
-FROM getterminus/ruby-docker-images:2.6-je-20190103
+FROM getterminus/ruby-docker-images:2.6-je-20190204
 
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
