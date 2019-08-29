@@ -7,7 +7,7 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 RUN apt-get -yy update \
-    && apt-get install -y nginx curl gettext-base libpq-dev unzip qt5-default libqt5webkit5-dev ffmpeg gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x --no-install-recommends \
+    && apt-get install -y postgresql nginx curl gettext-base libpq-dev unzip qt5-default libqt5webkit5-dev ffmpeg gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Node install borrowed with love from https://github.com/nodejs/docker-node/blob/b502aa016335c81a586b430328d8fee4897ee440/8.4/Dockerfile
