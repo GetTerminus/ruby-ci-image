@@ -73,3 +73,10 @@ RUN set -ex \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
 
+RUN mkdir /tmp/phantomjs \
+    && curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 \
+           | tar -xj --strip-components=1 -C /tmp/phantomjs \
+    && cd /tmp/phantomjs \
+    && mv bin/phantomjs /usr/local/bin
+
+RUN yarn global add node-sass && npm rebuild node-sass
