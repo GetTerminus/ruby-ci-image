@@ -7,7 +7,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
                 curl \
                 gnupg2 \
                 software-properties-common \
+                make \
+                libssl-dev \
+                libghc-zlib-dev \
+                libcurl4-gnutls-dev \
+                libexpat1-dev \
+                gettext \
                 && rm -rf /var/lib/apt/lists/*
+
+RUN wget https://github.com/git/git/archive/v2.18.0.tar.gz -O git.tar.gz; \
+    tar -xf git.tar.gz; \
+    cd git-*; \
+    make prefix=/usr/local all; \
+    make prefix=/usr/local install
 
 # install docker
 RUN curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg | apt-key add -
